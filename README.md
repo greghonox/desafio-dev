@@ -1,5 +1,5 @@
 # Desafio programação - para vaga desenvolvedor
-![alt text](https://static.vecteezy.com/system/resources/previews/001/203/665/original/eagle-png.png)
+![alt text](https://i.imgur.com/n3nGfIk.png)
 Por favor leiam este documento do começo ao fim, com muita atenção.
 O intuito deste teste é avaliar seus conhecimentos técnicos em programação.
 O teste consiste em parsear [este arquivo de texto(CNAB)](https://github.com/ByCodersTec/desafio-ruby-on-rails/blob/master/CNAB.txt) e salvar suas informações(transações financeiras) em uma base de dados a critério do candidato.
