@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block conteudo %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-12 offset-md-12">
+           <div class="card">
+               <div class="card-body">
+                   <h2>Importar a Transação</h2>
+                   <hr>
+                   <form action="" method="POST" id='cadastrar_transacao'>
+                       {% csrf_token %}
+                       {{ form }}
+                       <br/><br/>                       
+                       <input type="submit" value="Importar" class="btn btn-success float-right">
+                       <a href="{% url 'index' %}" type="reset" value="reset" class="btn btn-secondary">Cancel</a>
+                   </form>
+                   {{ message }}
+               </div>
+           </div>
+           <br/><br/><br/>
+           <div class="card">
+            <div class="card-body">
+                <h2>Transações existente</h2>
+                <hr>
+                <div class="card-body"></div>
+                <h2>Lista de Pacientes</h2>
+                <table class="table table-striped table-hover table-responsive-sm">
+                    <tr>
+                        <th>Id</th>
+                        <th>tipo</th>
+                        <th>data</th>
+                        <th>valor</th>
+                        <th>cpf</th>
+                        <th>cartao</th>
+                        <th>hora</th>
+                        <th>dono_loja</th>
+                        <th>nome_loja</th>
+                        <th></th>
+                    </tr>
+                    {% for l in table %}
+                        <tr>
+                            <td>{{ l.id }}</td>
+                            <td>{{ l.tipo }}</td>
+                            <td>{{ l.data | date }}</td>
+                            <td>{{ l.valor }}</td>
+                            <td>{{ l.cpf }}</td>
+                            <td>{{ l.cartao }}</td>
+                            <td>{{ l.hora | time}}</td>
+                            <td>{{ l.dono_loja | title  }}</td>
+                            <td>{{ l.nome_loja | title  }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                {{ message }}
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
